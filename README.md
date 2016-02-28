@@ -1,6 +1,6 @@
 # sprunge.el
 
-interact with <http://sprunge.us/> from emacs
+Upload pastes to [sprunge.us](http://sprunge.us/).
 
 ## usage
 
