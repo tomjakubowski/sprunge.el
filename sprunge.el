@@ -4,7 +4,7 @@
 
 ;; Author: Tom Jakubowski
 ;; Version: 0.1.0
-;; Package-Requires: ((request "0.2.0"))
+;; Package-Requires: ((request "0.2.0") (cl-lib "0.5"))
 ;; Keywords: tools
 
 ;; This file is NOT part of GNU Emacs.
@@ -31,7 +31,7 @@
 
 ;;; Code:
 
-(require 'cl-macs)
+(require 'cl-lib)
 (require 'request)
 
 (defgroup sprunge nil
@@ -52,11 +52,11 @@
              :files `(("sprunge" . ("" :data ,text)))
              :parser 'buffer-string
              :sync t
-             :success (function*
+             :success (cl-function
                        (lambda (&key data &allow-other-keys)
                          (setq sprunge-return
                                (replace-regexp-in-string "[ \t\n\r]*\\'" ""  data))))
-             :error (function*
+             :error (cl-function
                      (lambda (&key error-thrown &allow-other-keys)
                        (error "Sprunge upload error: %S" error-thrown))))
     sprunge-return))
