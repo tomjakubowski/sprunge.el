@@ -3,7 +3,7 @@
 ;; Copyright (C) Tom Jakubowski
 
 ;; Author: Tom Jakubowski
-;; Version: 0.1.0
+;; Version: 0.1.1
 ;; Package-Requires: ((request "0.2.0") (cl-lib "0.5"))
 ;; Keywords: tools
 
